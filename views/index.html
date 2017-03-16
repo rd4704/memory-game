@@ -1,0 +1,50 @@
+<!-- view template -->
+<!-- called from your routes in server.js -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memory!</title>
+    <meta name="description" content="Memory game">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>
+        Memory!
+          <span class="elapsed" data-bind="text: elapsed"></span>
+        </h1>
+      </header>
+  
+      <h3 class="message" data-bind="html: message"></h3>
+      <section class="board">
+        <div data-bind="foreach: cards">
+          <div class="card" data-bind="css: content, click: clicked"></div>
+        </div>
+      </section>
+    </div>
+    
+    <div style="color: white; margin-left: auto; margin-right: auto; width: 300px">
+      <p>Try also:</p>
+      <ul>
+        <li><a href="/?theme=cat">Memory Cats</a></li>
+        <li><a href="/?theme=dog">Memory Dogs</a></li>
+        <li><a href="/">Memory Colors</a></li>
+      </ul>
+    </div>
+
+    
+    <footer id="gWidget"></footer>
+    <script src="https://widget.gomix.me/widget.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+    <script src="/client.js"></script>
+
+  </body>
+</html>
